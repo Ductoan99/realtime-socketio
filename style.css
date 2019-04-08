@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-left {
+    width: 25vw;
+    height: 100vh;
+}
+
+.main-right {
+    width: 75vw;
+    height: 100vh;
+    border: 1px solid #000;
+}
+
+.main-left__top {
+    width: 100%;
+    height: 20vh;
+    border: 1px solid #000;
+}
+
+.list-user {
+    width: 100%;
+    height: 80vh;
+    overflow-y: scroll;
+    border: 1px solid #000;
+}
+
+.list-user::-webkit-scrollbar {
+    display: none;
+}
+
+.main-left__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login > input {
+    width: 400px;
+    height: 50px;
+    font-size: 24px;
+    border:none;
+    background: black;
+    outline: none;
+    color: #fff;
+    text-align: center;
+}
