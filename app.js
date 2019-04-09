@@ -58,13 +58,12 @@ io.on('connection', function (socket) {
   })
 
   socket.on('Client_send_message_to_server', data => {
-    axios('http://sandbox.api.simsimi.com/request.p?key=b923f855-5e6f-411c-a868-ac3adcbf7098&lc=en&ft=1.0&text='+data.content)
+    axios('http://api.minhhieu.asia/vi.php?text='+data.content)
       .then(response => {
-        console.log(data, response.data)
         socket.broadcast.emit("Server_send_message_to_client", {
           id: 'simi-bot',
           name: 'SIMI BOT',
-          content: response.data.response
+          content: response.data
         })
       })
       .catch(response => response)
