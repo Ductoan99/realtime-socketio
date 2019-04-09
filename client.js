@@ -59,6 +59,7 @@ $(document).ready(function () {
     })
 
     socket.on('Server_send_account_to_client', account => {
+        socket.id = account.id
         localStorage.setItem('__account', JSON.stringify(account))
     })
 
