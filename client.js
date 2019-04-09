@@ -60,10 +60,12 @@ $(document).ready(function () {
 
     socket.on('Server_send_account_to_client', account => {
         socket.id = account.id
+        console.log(socket.id)
         localStorage.setItem('__account', JSON.stringify(account))
     })
 
     socket.on('Server_send_message_to_client', data => {
+        console.log(socket.id, data.id)
         if(data.id !== socket.id) {
             let message = `<div class="flexbox">
                     <div class="message">
