@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('https://realtime-socketio.herokuapp.com');
     let __account = JSON.parse(localStorage.getItem('__account'))
 
     $(".main").hide()
