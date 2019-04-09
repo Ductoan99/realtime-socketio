@@ -8,7 +8,7 @@ body {
 }
 
 .main {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -18,25 +18,25 @@ body {
 }
 
 .main-left {
-    width: 25vw;
+    width: 25%;
     height: 100vh;
 }
 
 .main-right {
-    width: 75vw;
+    width: 75%;
     height: 100vh;
     border: 1px solid #000;
 }
 
 .main-left__top {
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     border: 1px solid #000;
 }
 
 .list-user {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     overflow-y: scroll;
     border: 1px solid #000;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .login {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: #000;
     display: flex;
@@ -72,4 +72,81 @@ body {
     outline: none;
     color: #fff;
     text-align: center;
+}
+
+.main-right > .form-title {
+    width: 100%;
+    height: 10vh;
+    border: 1px solid #000;
+}
+
+.main-right > .form-content {
+    width: 100%;
+    height: 75vh;
+    border: 1px solid #000;
+    overflow-y: scroll;
+}
+
+.main-right > .form-input {
+    width: 100%;
+    height: 15vh;
+    border: 1px solid #000;
+}
+
+.form-content > .flexbox > .message,
+.form-content > .flexbox-reverse > .message-rep {
+    width: 60%;
+    height: auto;
+    margin: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.message > .message-name,
+.message-rep > .message-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.flexbox,
+.flexbox-reverse {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.flexbox {
+    flex-direction: row;
+}
+
+.flexbox-reverse {
+    flex-direction: row-reverse;
+}
+
+.flexbox > .message {
+    background: aquamarine;
+}
+
+.flexbox-reverse > .message-rep {
+    background: khaki;
+}
+
+
+.form-input {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    width: 80%;
+    height: 50px;
+}
+
+button {
+    width: 15%;
+    margin-left: 5%;
+    height: 50px;
 }

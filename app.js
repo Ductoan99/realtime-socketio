@@ -3,6 +3,8 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+var axios = require('axios')
+
 app.use(express.static("./"))
 
 server.listen(3000, () => {
@@ -44,5 +46,28 @@ io.on('connection', function (socket) {
       socket.name = data
       arrayUser.push(socket.name)
       serverSendArrayUser()
+      let account = { id:socket.id, name: socket.name }
+      socket.emit('Server_send_account_to_client', account)
+  })
+
+  socket.on('Client_send_accout_to_server', data => {
+    socket.id = data.id
+    socket.name = data.name
+    arrayUser.push(socket.name)
+    serverSendArrayUser()
+  })
+
+  socket.on('Client_send_message_to_server', data => {
+    axios('http://sandbox.api.simsimi.com/request.p?key=b923f855-5e6f-411c-a868-ac3adcbf7098&lc=en&ft=1.0&text='+data.content)
+      .then(response => {
+        socket.broadcast.emit("Server_send_message_to_client", {
+          id: 'simi-bot',
+          name: 'SIMI BOT',
+          content: response.data.response
+        })
+      })
+      .catch(response => response)
+      
+    socket.broadcast.emit("Server_send_message_to_client", data)
   })
 });
